@@ -8,7 +8,7 @@
               <!-- the links to our nested states using relative paths -->
               <!-- add the active class if the state matches our ui-sref -->
               <div id="status-buttons" class="text-center">
-                  <a ui-sref-active="active" ui-sref=".inicio"><span>1</span></a>
+                  <!-- <a ui&#45;sref&#45;active="active" ui&#45;sref=".inicio"><span>1</span></a> -->
                   <a ui-sref-active="active" ui-sref=".percepcion"><span>2</span></a>
                   <a ui-sref-active="active" ui-sref=".vamos"><span>3</span></a>
                   <a ui-sref-active="active" ui-sref=".ingresos"><span>4</span></a>
@@ -16,14 +16,17 @@
                   <a ui-sref-active="active" ui-sref=".cdv-educativa"><span>6</span></a>
                   <a ui-sref-active="active" ui-sref=".cdv-social"><span>7</span></a>
                   <a ui-sref-active="active" ui-sref=".participacion"><span>8</span></a>
-                  <a ui-sref-active="active" ui-sref=".final"><span>9</span></a>
               </div>
           </div>
           
           <!-- use ng-submit to catch the form submission and use our Angular function -->
           <form id="tieso-form" ng-submit="processForm()">
-              <!-- our nested state views will be injected here -->
-              <div id="tieso-form-views" ui-view></div>
+              <div class="row">
+                  <div class="col-sm-6 mascota-block"></div>
+                  <div id="tieso-form-views" class="col-sm-6" ui-view>
+                      <!-- our nested state views will be injected here -->
+                  </div>
+              </div>
           </form>
       
       </div>

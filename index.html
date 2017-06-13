@@ -4,24 +4,23 @@
     <meta charset="utf-8">
 
     <!-- CSS -->
-    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/darkly/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/own/style.css">
     
 </head>
-<body ng-app="tiesometer">
+<body class="gris-bg" ng-app="tiesometer">
 
-    <!-- views will be injected here -->
     <div class="container">
-        <div ui-view></div>
+        <div ui-view><!-- views will be injected here --></div>
     </div>
 
     <!-- JS -->
-    <!-- load angular, nganimate, and ui-router -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
-    <script src="app.js"></script>
+    <!-- load angular, nganimate, and ui-route -->
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/angular-ui-router.min.js"></script>
+    <script src="js/vendor/angular-animate.min.js"></script>
+    <script src="js/own/app.js"></script>
 
 </body>
 </html>

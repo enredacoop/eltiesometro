@@ -1,0 +1,19 @@
+{
+  "name": "eltsmt",
+  "version": "0.0.1",
+  "description": "El Tiesómetro WebApp",
+  "main": "",
+  "scripts": {},
+  "author": "ENREDA Cooperativa",
+  "license": "GPLv3",
+  "dependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-less": "~1.0.1",
+    "less-plugin-autoprefix": "~1.5.1",
+    "grunt-contrib-cssmin": "~0.14.0",
+    "grunt-contrib-clean": "~0.7.0",
+    "grunt-contrib-concat" : "~0.5.1"
+  },
+  "devDependencies": {}
+}
