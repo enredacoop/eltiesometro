@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     watch: {
       less: {
         files: ['less/**/*.less'],
-        tasks: ['less:dist', 'clean'],
+        tasks: ['less:dist'],
       },
     },
   });
@@ -39,6 +39,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['less:dist', 'cssmin', 'clean', 'watch']);
+  grunt.registerTask('default', ['less', 'clean', 'watch']);
 
 }
