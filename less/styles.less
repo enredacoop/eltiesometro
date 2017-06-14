@@ -1,7 +1,7 @@
 /* VARIABLES
 ============================================================================= */
 
-@white: #ff;
+@white: #fff;
 @lightgrey: #e8e8e8;
 @grey: rgba(220, 219, 219, 0.4);
 @orange: #ea5c4d;
@@ -40,24 +40,26 @@ pre {
 
     #status-buttons {
         a {
-            color:@orange;
+            color:@white;
             display:inline-block;
             font-size:12px;
             margin-right:10px;
             text-align:center;
             text-transform:uppercase; 
             &:hover {
+                color:@white;
                 text-decoration: none;
             }
         }
         a.active {
+            color:@white;
             span {
                 background-color: darken(@orange, 10%);
                 text-decoration: none;
             }
         }
         span {
-            background:#080808;
+            background:@orange;
             display:block;
             height:30px;
             margin:0 auto 10px;
