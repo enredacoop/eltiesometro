@@ -14,7 +14,6 @@ module.exports = function(grunt) {
         },
       },
     },
-    clean: ["less/styles.less"],
     cssmin: {
       options: {
         shorthandCompacting: false,
@@ -29,16 +28,15 @@ module.exports = function(grunt) {
     watch: {
       less: {
         files: ['less/**/*.less'],
-        tasks: ['less:dist'],
+        tasks: ['less:dist', 'cssmin'],
       },
     },
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['less', 'clean', 'watch']);
+  grunt.registerTask('default', ['less:dist', 'cssmin', 'watch']);
 
 }
