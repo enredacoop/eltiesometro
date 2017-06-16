@@ -54,11 +54,16 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
             // url: '/participacion',
             templateUrl: 'form-participacion.html'
         })
+
+        .state('form.final', {
+            // url: '/final',
+            templateUrl: 'form-final.html'
+        })
         
-        .state('final', {
+        .state('resultado', {
             url: '/:hash',
-            templateUrl: 'form-final.html',
-            controller: 'finalController'
+            templateUrl: 'resultado.html',
+            controller: 'resultadoController'
         })
        
     // catch all route
@@ -68,20 +73,48 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
 
 // our controller for the form
 // =============================================================================
-.controller('formController', function($scope, $state, $location) {
+.controller('formController', function($scope, $state, $location, $timeout) {
     
     // we will store all of our form data in this object
     $scope.formData = {};
-    $state.go('form.inicio');
+    $state.go('form.percepcion');
+
+    $scope.goTo = function(state) {
+        $timeout(function() {
+            $state.go(state);
+        }, 500);
+    }
     
     // function to process the form
     $scope.processForm = function() {
-        $location.path('/XOXOXO');
+        var d = $scope.formData;
+        var tmpcdv = parseInt(d.cdvmaterial) + parseInt(d.cdveducativa) + parseInt(d.cdvsocial);
+        var cdv = 5;
+        switch(tmpcdv) {
+            case 3:
+                cdv = 1;
+                break;
+            case 2:
+                cdv = 2;
+                break;
+            case 1:
+                cdv = 4;
+                break;
+            case 0:
+                cdv = 5;
+                break;
+        }
+        var tiesura = (parseInt(d.ingresos) + parseInt(cdv) + parseInt(d.participacion));
+        console.log(parseInt(d.ingresos));
+        console.log(parseInt(cdv));
+        console.log(d.participacion);
+        console.log($scope.formData);
+        $location.path('XOXOXO');
     };
     
 })
 
-.controller('finalController', function($scope, $state, $stateParams) {
+.controller('resultadoController', function($scope, $state, $stateParams) {
     // Get the ranking value from hash (just the first two digits)
     $scope.hash = $stateParams.hash;
 });

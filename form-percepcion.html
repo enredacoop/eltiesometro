@@ -1,12 +1,11 @@
 <div class="text-center">
-    <h3>¿Cuál crees que es tu nivel de tiesura?</h3>
+    <div class="ask-intro">Comprueba si estás más tieso que la pata perico</div>
+    <div class="ask">¿Cuál crees que es tu nivel de tiesura?</div>
     <div class="percepcion-group">
-        <input type="radio" name="percepcion-value" ng-model="formData.percepcion" value="0">0
-        <input type="radio" name="percepcion-value" ng-model="formData.percepcion" value="1">1
-        <input type="radio" name="percepcion-value" ng-model="formData.percepcion" value="2">2
-        <input type="radio" name="percepcion-value" ng-model="formData.percepcion" value="3">3
-        <input type="radio" name="percepcion-value" ng-model="formData.percepcion" value="4">4
-        <input type="radio" name="percepcion-value" ng-model="formData.percepcion" value="5">5
+        <input ng-click="goTo('form.vamos')" type="radio" name="percepcion-value" class="input-hidden" ng-model="formData.percepcion" id="perc1" value="1"><label for="perc1" class="block">No puedo con más tiesura</label>
+        <input ng-click="goTo('form.vamos')" type="radio" name="percepcion-value" class="input-hidden" ng-model="formData.percepcion" id="perc2" value="2"><label for="perc2" class="block">Tieso, tieso</label>
+        <input ng-click="goTo('form.vamos')" type="radio" name="percepcion-value" class="input-hidden" ng-model="formData.percepcion" id="perc3" value="3"><label for="perc3" class="block">Tiesura media</label>
+        <input ng-click="goTo('form.vamos')" type="radio" name="percepcion-value" class="input-hidden" ng-model="formData.percepcion" id="perc4" value="4"><label for="perc4" class="block">No me puedo quejar</label>
+        <input ng-click="goTo('form.vamos')" type="radio" name="percepcion-value" class="input-hidden" ng-model="formData.percepcion" id="perc5" value="5"><label for="perc5" class="block">Estoy montao en el taco</label>
     </div>
-    
 </div>

@@ -1,4 +1,8 @@
 <div class="text-center">
-    <h3>Calidad de vida</h3>
-    <h5>Educativa</h5>
+    <div class="ask-intro">Subtitulo aqui...</div>
+    <div class="ask">¿Has tenido medios suficientes para realizar los estudios que deseabas?</div>
+    <div class="percepcion-group">
+        <input ng-click="goTo('form.cdv-social')" type="radio" name="cdve-value" class="input-hidden" ng-model="formData.cdveducativa" id="cdve1" value="1"><label for="cdve1">Sí</label>
+        <input ng-click="goTo('form.cdv-social')" type="radio" name="cdve-value" class="input-hidden" ng-model="formData.cdveducativa" id="cdve0" value="0"><label for="cdve0">No</label>
+    </div>
 </div>

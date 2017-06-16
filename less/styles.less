@@ -3,10 +3,10 @@
 
 @white: #fff;
 @lightgrey: #e8e8e8;
-@grey: rgba(220, 219, 219, 0.4);
+@grey: #bcbdbd;
 @orange: #ea5c4d;
 @green: #1fb3b0;
-@navy: 2d3e50;
+@navy: #2d3e50;
 
 @trans-height: 200%;
 
@@ -16,15 +16,65 @@
 
 
 body {
-    background-color: @grey;
+    background-color: @lightgrey;
     padding-top:20px;
+    font-family: 'Bitter', serif;
 }
 pre {
     background-color: @navy;
-    border-color: @navy;
+    border-color: @white;
     color: @white;
     margin-bottom:20px;
 }
+
+/* UIs */
+
+.main-button {
+    border: 7px solid darken(@orange, 15%);
+    padding: 15px 15px 15px 15px;
+    color: @white;
+    background-color: @orange;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: -10px 10px 0px 0px @grey;
+    -moz-box-shadow: -10px 10px 0px 0px @grey;
+    -webkit-box-shadow: -10px 10px 0px 0px @grey;
+    &:hover {
+        color: @white;
+        background-color: darken(@orange, 3%);
+        text-decoration: none;
+    }
+}
+
+.input-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+input[type=radio]:checked + label {
+    color: @white;
+    background-color: @grey;
+    font-weight: bold;
+}
+
+input[type=radio] + label {
+    border: 3px solid @grey;
+    padding: 5px 30px;
+    margin-right: 5px;
+    color: @grey;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+input[type=radio] + label.block {
+    display: grid;
+}
+    
+/* General styles*/
 
 #form-container {
 
@@ -75,10 +125,31 @@ pre {
         overflow:hidden;
         padding:30px;
 
+        #tieso-form-views {
+            padding: 100px 20px 100px 20px;
+            border-left: 5px solid @white;
+            min-height: 300px;
+
+            .ask-intro {
+                color: @green;
+                text-transform: uppercase;
+
+            }
+            .ask {
+                font-size: 1.5em;
+                color: @navy;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            .percepcion-group {
+                padding-top: 20px;
+            }
+        }
+
         #tieso-form-views.ng-enter, #tieso-form-views.ng-leave {
             position:absolute;
-            left:30px;
-            right:30px;
+            // left:30px;
+            // right:30px;
             transition:0.5s all ease;
             -moz-transition:0.5s all ease;
             -webkit-transition:0.5s all ease; 
@@ -98,6 +169,13 @@ pre {
     
     }
 
+    .mascota-block {
+        min-height: 300px;
+        img {
+            width: 300px;
+        }
+    }
+
 
 }
 
@@ -106,25 +184,25 @@ pre {
 ============================================================================= */
 /* slide out to the top */
 @keyframes slideOutTop {
-	to 		{ transform: translateY(-(@trans-height)); }
+	to 		{ transform: translateY(-(@trans-height)); opacity:0; }
 }
 @-moz-keyframes slideOutTop {	
-	to 		{ transform: translateY(-(@trans-height)); }
+	to 		{ transform: translateY(-(@trans-height)); opacity:0; }
 }
 @-webkit-keyframes slideOutTop {
-	to 		{ transform: translateY(-(@trans-height)); }
+	to 		{ transform: translateY(-(@trans-height)); opacity:0; }
 }
 
 /* slide in from the bottom */
 @keyframes slideInBottom {
-	from 	{ transform:translateY(@trans-height); }
-	to 		{ transform: translateY(0); }
+	from 	{ transform:translateY(@trans-height); opacity:0; }
+	to 		{ transform: translateY(0); opacity:1; }
 }
 @-moz-keyframes slideInBottom {
-	from 	{ transform:translateY(@trans-height); }
-	to 		{ transform: translateY(0); }
+	from 	{ transform:translateY(@trans-height); opacity:0; }
+	to 		{ transform: translateY(0); opacity:1; }
 }
 @-webkit-keyframes slideInBottom {
-	from 	{ transform:translateY(@trans-height); }
-	to 		{ -webkit-transform: translateX(0); }
+	from 	{ transform:translateY(@trans-height); opacity:0; }
+	to 		{ transform: translateY(0); opacity:1; }
 }
