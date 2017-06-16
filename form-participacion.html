@@ -1,10 +1,14 @@
 <div class="text-center">
-    <div class="ask-intro">Vecinales, sociales, culturales, ambientales, urbanas, ...</div>
-    <div class="ask">¿Te llega la vida para participar en actividades de tu comunidad?</div>
-    <div class="percepcion-group">
-        <input ng-click="goTo('form.final')" type="radio" name="participacion-value" class="input-hidden" ng-model="formData.participacion" id="participacion1" value="1"><label for="participacion1">Sí</label>
-        <input ng-click="goTo('form.final')" type="radio" name="participacion-value" class="input-hidden" ng-model="formData.participacion" id="participacion3" value="3"><label for="participacion3">A veces</label>
-        <input ng-click="goTo('form.final')" type="radio" name="participacion-value" class="input-hidden" ng-model="formData.participacion" id="participacion5" value="5"><label for="participacion5">No</label>
+    <div class="row">
+        <div class="col-sm-6 ask-group">
+            <div class="ask-intro">Vecinales, sociales, culturales, ambientales, urbanas, ...</div>
+            <div class="ask">¿Te llega la vida para participar en actividades de tu comunidad?</div>
+            <input ng-click="goTo('form.final')" type="radio" name="participacion-value" class="input-hidden" ng-model="formData.participacion" id="participacion1" value="1"><label for="participacion1">Sí</label>
+            <input ng-click="goTo('form.final')" type="radio" name="participacion-value" class="input-hidden" ng-model="formData.participacion" id="participacion3" value="3"><label for="participacion3">A veces</label>
+            <input ng-click="goTo('form.final')" type="radio" name="participacion-value" class="input-hidden" ng-model="formData.participacion" id="participacion5" value="5"><label for="participacion5">No</label>
+        </div>
+        <div class="col-sm-6 mascota-block hidden-xs">
+            <img src="images/participacion.svg" /> -->
+        </div>
     </div>
-    <button type="submit">Enviar</button>
 </div>

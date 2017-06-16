@@ -1,8 +1,13 @@
 <div class="text-center">
-    <div class="ask-intro">Reparar tu coche, comprar un electrodomésico, alguna urgencia médica, ...</div>
-    <div class="ask">¿Puedes asumir un imprevisto de 650€?</div>
-    <div class="percepcion-group">
-        <input ng-click="goTo('form.cdv-educativa')" type="radio" name="cdvm-value" class="input-hidden" ng-model="formData.cdvmaterial" id="cdvm1" value="1"><label for="cdvm1">Sí</label>
-        <input ng-click="goTo('form.cdv-educativa')" type="radio" name="cdvm-value" class="input-hidden" ng-model="formData.cdvmaterial" id="cdvm0" value="0"><label for="cdvm0">No</label>
+    <div class="row">
+        <div class="col-sm-6 ask-group">
+            <div class="ask-intro">Reparar tu coche, comprar un electrodomésico, urgencias médicas, ...</div>
+            <div class="ask">¿Puedes asumir un imprevisto de 650€?</div>
+            <input ng-click="goTo('form.cdv-educativa')" type="radio" name="cdvm-value" class="input-hidden" ng-model="formData.cdvmaterial" id="cdvm1" value="1"><label for="cdvm1">Sí</label>
+            <input ng-click="goTo('form.cdv-educativa')" type="radio" name="cdvm-value" class="input-hidden" ng-model="formData.cdvmaterial" id="cdvm0" value="0"><label for="cdvm0">No</label>
+        </div>
+        <div class="col-sm-6 mascota-block hidden-xs">
+            <img src="images/cdv-material.svg" /> -->
+        </div>
     </div>
 </div>

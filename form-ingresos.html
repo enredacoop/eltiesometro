@@ -1,9 +1,14 @@
 <div class="text-center">
-    <div class="ask-intro">Subtítulo aquí</div>
-    <div class="ask">¿De dónde viene la mayor parte de tus ingresos?</div>
-    <div class="percepcion-group">
-        <input ng-click="goTo('form.cdv-material')" type="radio" name="ingresos-value" class="input-hidden" ng-model="formData.ingresos" id="ingresos5" value="5"><label for="ingresos5" class="block">De tu empleo</label>
-        <input ng-click="goTo('form.cdv-material')" type="radio" name="ingresos-value" class="input-hidden" ng-model="formData.ingresos" id="ingresos3" value="3"><label for="ingresos3" class="block">De la inversión de capital</label>
-        <input ng-click="goTo('form.cdv-material')" type="radio" name="ingresos-value" class="input-hidden" ng-model="formData.ingresos" id="ingresos1" value="1"><label for="ingresos1" class="block">De alguna prestación y/o apoyo familiar</label>
+    <div class="row">
+        <div class="col-sm-6 ask-group">
+            <div class="ask-intro">De otra forma... ¿Por dónde entra la manteca?</div>
+            <div class="ask">¿De dónde viene la mayor parte de tus ingresos?</div>
+            <input ng-click="goTo('form.cdv-material')" type="radio" name="ingresos-value" class="input-hidden" ng-model="formData.ingresos" id="ingresos5" value="5"><label for="ingresos5" class="block">De tu empleo</label>
+            <input ng-click="goTo('form.cdv-material')" type="radio" name="ingresos-value" class="input-hidden" ng-model="formData.ingresos" id="ingresos3" value="3"><label for="ingresos3" class="block">De la inversión de capital</label>
+            <input ng-click="goTo('form.cdv-material')" type="radio" name="ingresos-value" class="input-hidden" ng-model="formData.ingresos" id="ingresos1" value="1"><label for="ingresos1" class="block">De alguna prestación y/o apoyo familiar</label>
+        </div>
+        <div class="col-sm-6 mascota-block hidden-xs">
+            <img src="images/ingresos.svg" /> -->
+        </div>
     </div>
 </div>

@@ -1,8 +1,13 @@
 <div class="text-center">
-    <div class="ask-intro">Con amistades, familiares o con quien desees</div>
-    <div class="ask">¿Te puedes reunir al menos una vez al mes para actividades de ocio?</div>
-    <div class="percepcion-group">
-        <input ng-click="goTo('form.participacion')" type="radio" name="cdvs-value" class="input-hidden" ng-model="formData.cdvsocial" id="cdvs1" value="1"><label for="cdvs1">Sí</label>
-        <input ng-click="goTo('form.participacion')" type="radio" name="cdvs-value" class="input-hidden" ng-model="formData.cdvsocial" id="cdvs0" value="0"><label for="cdvs0">No</label>
+    <div class="row">
+        <div class="col-sm-6 ask-group">
+            <div class="ask-intro">Con amistades, familiares o con quien desees</div>
+            <div class="ask">¿Te puedes reunir al menos una vez al mes para actividades de ocio?</div>
+            <input ng-click="goTo('form.participacion')" type="radio" name="cdvs-value" class="input-hidden" ng-model="formData.cdvsocial" id="cdvs1" value="1"><label for="cdvs1">Sí</label>
+            <input ng-click="goTo('form.participacion')" type="radio" name="cdvs-value" class="input-hidden" ng-model="formData.cdvsocial" id="cdvs0" value="0"><label for="cdvs0">No</label>
+        </div>
+        <div class="col-sm-6 mascota-block hidden-xs">
+            <img src="images/cdv-social.svg" /> -->
+        </div>
     </div>
 </div>

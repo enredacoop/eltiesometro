@@ -126,10 +126,15 @@ input[type=radio] + label.block {
         padding:30px;
 
         #tieso-form-views {
-            padding: 100px 20px 100px 20px;
-            border-left: 5px solid @white;
+            padding: 20px 20px 0px 20px;
             min-height: 300px;
 
+            .ask-group {
+                padding-top: 50px;
+            }
+            .ask-button {
+                padding-top: 100px;
+            }
             .ask-intro {
                 color: @green;
                 text-transform: uppercase;
@@ -141,13 +146,17 @@ input[type=radio] + label.block {
                 font-weight: bold;
                 text-transform: uppercase;
             }
-            .percepcion-group {
-                padding-top: 20px;
+            .mascota-block {
+                min-height: 300px;
+                border-left: 5px solid @white;
+                img {
+                    width: 400px;
+                }
             }
         }
 
         #tieso-form-views.ng-enter, #tieso-form-views.ng-leave {
-            position:absolute;
+            // position:absolute;
             // left:30px;
             // right:30px;
             transition:0.5s all ease;
@@ -169,12 +178,6 @@ input[type=radio] + label.block {
     
     }
 
-    .mascota-block {
-        min-height: 300px;
-        img {
-            width: 300px;
-        }
-    }
 
 
 }

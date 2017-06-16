@@ -8,39 +8,18 @@
                   <h2 class="hidden"></h2>
                   <img src="images/logo.svg" />
               </a>
-              
-              <!-- the links to our nested states using relative paths -->
-              <!-- add the active class if the state matches our ui-sref -->
-              <div id="status-buttons" class="text-center">
-                  <!-- <a ui&#38;#45;sref&#38;#45;active="active" ui&#38;#45;sref=".inicio"><span>1</span></a> -->
-                  <!-- <a ui&#45;sref&#45;active="active" ui&#45;sref=".percepcion"><span>2</span></a> -->
-                  <!-- <a ui&#45;sref&#45;active="active" ui&#45;sref=".vamos"><span>3</span></a> -->
-                  <!-- <a ui&#45;sref&#45;active="active" ui&#45;sref=".ingresos"><span>4</span></a> -->
-                  <!-- <a ui&#45;sref&#45;active="active" ui&#45;sref=".cdv&#45;material"><span>5</span></a> -->
-                  <!-- <a ui&#45;sref&#45;active="active" ui&#45;sref=".cdv&#45;educativa"><span>6</span></a> -->
-                  <!-- <a ui&#45;sref&#45;active="active" ui&#45;sref=".cdv&#45;social"><span>7</span></a> -->
-                  <!-- <a ui&#45;sref&#45;active="active" ui&#45;sref=".participacion"><span>8</span></a> -->
-              </div>
           </div>
           
           <!-- use ng-submit to catch the form submission and use our Angular function -->
           <form id="tieso-form" ng-submit="processForm()">
               <div class="row">
-                  <div class="col-sm-6 mascota-block hidden-xs">
-                    <!-- <img src="images/vamos.svg" /> -->
-                  </div>
-                  <div id="tieso-form-views" class="col-sm-6" ui-view>
+                  <div id="tieso-form-views" class="col-sm-12" ui-view>
                       <!-- our nested state views will be injected here -->
                   </div>
               </div>
           </form>
       
       </div>
-      
-      <!-- show our formData as it is being typed -->
-      <pre>
-        {{ formData }}
-      </pre>
 
     </div>
 </div>
