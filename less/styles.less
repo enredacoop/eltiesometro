@@ -73,7 +73,21 @@ input[type=radio] + label {
 input[type=radio] + label.block {
     display: grid;
 }
-    
+
+
+#share-buttons {
+    padding: 20px 10px;
+    img {
+        width: 56px;
+        padding: 5px;
+        border: 0;
+        box-shadow: 0;
+        display: inline;
+    }
+}
+
+
+
 /* General styles*/
 
 #form-container {
@@ -145,6 +159,7 @@ input[type=radio] + label.block {
                 color: @navy;
                 font-weight: bold;
                 text-transform: uppercase;
+                margin-bottom: 20px;
             }
             .mascota-block {
                 min-height: 300px;
@@ -157,8 +172,8 @@ input[type=radio] + label.block {
 
         #tieso-form-views.ng-enter, #tieso-form-views.ng-leave {
             // position:absolute;
-            // left:30px;
-            // right:30px;
+            // top:30px;
+            // bottom:30px;
             transition:0.5s all ease;
             -moz-transition:0.5s all ease;
             -webkit-transition:0.5s all ease; 
@@ -178,8 +193,16 @@ input[type=radio] + label.block {
     
     }
 
+}
 
-
+#resultado-block {
+    h3 {
+        color: @green;
+        strong {
+            color: @navy;
+            font-size: 2em;
+        }
+    }
 }
 
 

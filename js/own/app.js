@@ -104,17 +104,17 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
                 cdv = 5;
                 break;
         }
-        var tiesura = (parseInt(d.ingresos) + parseInt(cdv) + parseInt(d.participacion));
-        console.log(parseInt(d.ingresos));
-        console.log(parseInt(cdv));
-        console.log(d.participacion);
-        console.log($scope.formData);
-        $location.path('XOXOXO');
+        var tiesura = (parseInt(d.ingresos) + parseInt(cdv) + parseInt(d.participacion))/3;
+        // Transform tiesura from (1,5) to (0,4) to calculare percentage properly
+        tiesura = Math.round(((tiesura-1)*100)/4);
+        $location.path(tiesura.toString().length+'Lt5'+tiesura+'MtR0');
     };
     
 })
 
 .controller('resultadoController', function($scope, $state, $stateParams) {
     // Get the ranking value from hash (just the first two digits)
-    $scope.hash = $stateParams.hash;
+    var hash = $stateParams.hash;
+    var tiesura = hash.substr(4, hash.charAt(0));
+    $scope.tiesura = tiesura;
 });
