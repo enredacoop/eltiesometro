@@ -7,6 +7,7 @@
 @orange: #ea5c4d;
 @green: #1fb3b0;
 @navy: #2d3e50;
+@black-oda: #343434;
 
 @trans-height: 200%;
 
@@ -31,7 +32,7 @@ pre {
 
 .main-button {
     border: 7px solid darken(@orange, 15%);
-    padding: 15px 15px 15px 15px;
+    padding: 15px;
     color: @white;
     background-color: @orange;
     font-size: 2.5em;
@@ -45,6 +46,34 @@ pre {
     &:hover {
         color: @white;
         background-color: darken(@orange, 3%);
+        text-decoration: none;
+    }
+}
+.main-button-small {
+    border: 3px solid darken(@orange, 15%);
+    padding: 10px;
+    font-size: 1.2em;
+    box-shadow: -5px 5px 0px 0px @grey;
+    -moz-box-shadow: 5px 5px 0px 0px @grey;
+    -webkit-box-shadow: -5px 5px 0px 0px @grey;
+}
+
+.oda-button {
+    border: 3px solid darken(@navy, 10%);
+    padding: 10px;
+    color: @white;
+    background-color: @navy;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: -5px 5px 0px 0px darken(navy, 5%);
+    -moz-box-shadow: -5px 5px 0px 0px darken(navy, 5%);
+    -webkit-box-shadow: -5px 5px 0px 0px darken(navy, 5%);
+    &:hover {
+        color: @white;
+        background-color: darken(@navy, 10%);
         text-decoration: none;
     }
 }
@@ -90,7 +119,7 @@ input[type=radio] + label.block {
 
 /* General styles*/
 
-#app-container {
+#app-container, #resultado-block {
 
     .page-head {
         margin:0 auto;
@@ -163,12 +192,68 @@ input[type=radio] + label.block {
 }
 
 #resultado-block {
-    h3 {
-        color: @green;
-        strong {
-            color: @navy;
-            font-size: 2em;
+    .main-block {
+        h3 {
+            color: @green;
+            text-transform: uppercase;
         }
+        .tiesura {
+            color: @navy;
+            font-size: 8em;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 30px;
+        }
+        .mascota {
+            width: 200px;
+        }
+        #share-buttons {
+            h5 {
+                color: @green;
+            }
+        }
+        .termometro {
+            margin: 0 auto;
+            padding: 30px;
+        }
+    }
+}
+#oda-block {
+    padding: 30px 30px 60px 30px;
+    background-color: @navy;
+    h5 {
+        text-align: center;
+        text-transform: uppercase;
+        color: @white;
+        font-weight: bold;
+        padding-bottom: 30px;
+    }
+    h3 {
+        text-align: center;
+        color: @white;
+    }
+    .datos {
+        padding-top: 30px;
+    }
+}
+#presiona-block {
+    padding: 30px 30px 60px 30px;
+    background-color: @white;
+    h5 {
+        text-align: center;
+        text-transform: uppercase;
+        color: @navy;
+        font-weight: bold;
+        padding-bottom: 30px;
+    }
+    h4, h6 {
+        color: @orange;
+    }
+    h4 {
+        font-weight: bold;
+    }
+    h6 {
+        padding-bottom: 15px;
     }
 }
 
