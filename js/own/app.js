@@ -117,4 +117,6 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
     var hash = $stateParams.hash;
     var tiesura = hash.substr(4, hash.charAt(0));
     $scope.tiesura = tiesura;
+    $scope.reload = $stateParams.hash.charAt($stateParams.hash.length-1) == 'r';
+    $scope.share = !$scope.reload;
 });
