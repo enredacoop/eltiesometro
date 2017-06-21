@@ -108,6 +108,7 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
         // Transform tiesura from (1,5) to (0,4) to calculare percentage properly
         tiesura = Math.round(((tiesura-1)*100)/4);
         // Google Analytics must be previously added
+        console.log(ga);
         ga('send', 'event', {
             eventCategory: 'Tiesura',
             eventAction: 'finish',
@@ -135,14 +136,15 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
     $scope.get_desc_from_tiesura = function(t) {
         t = parseInt(t);
         if (t in _.range(0,20))
-            return "No puedo con más tiesura";
+            return "Estoy en el taco";
         else if (t in _.range(20,40))
-            return "La tiesura me aprieta demasiao";
+            return "No me puedo quejar";
         else if (t in _.range(40,60))
             return "Tiesura media";
         else if (t in _.range(60,80))
-            return "No me puedo quejar";
-        else return "Estoy montá/o en el taco";
+            return "La tiesura me aprieta demasiao";
+        else 
+            return "No puedo con más tiesura";
     }
 
     // Get the ranking value from hash (just the first two digits)
