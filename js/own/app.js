@@ -113,10 +113,34 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
 })
 
 .controller('resultadoController', function($scope, $state, $stateParams) {
+
+    $scope.get_desc_from_tiesura = function(t) {
+        t = parseInt(t);
+        if (t in _.range(0,20))
+            return "No puedo con más tiesura";
+        else if (t in _.range(20,40))
+            return "La tiesura me aprieta demasiao";
+        else if (t in _.range(40,60))
+            return "Tiesura media";
+        else if (t in _.range(60,80))
+            return "No me puedo quejar";
+        else return "Estoy montá/o en el taco";
+    }
+
     // Get the ranking value from hash (just the first two digits)
     var hash = $stateParams.hash;
-    var tiesura = hash.substr(4, hash.charAt(0));
-    $scope.tiesura = tiesura;
-    $scope.reload = $stateParams.hash.charAt($stateParams.hash.length-1) == 'r';
-    $scope.share = !$scope.reload;
+    console.log(hash);
+    if (hash != 'actua') {
+        $scope.tiesura = hash.substr(4, hash.charAt(0));
+        $scope.tiesura_desc = $scope.get_desc_from_tiesura($scope.tiesura);
+        $scope.reload = $stateParams.hash.charAt($stateParams.hash.length-1) == 'r';
+        $scope.load = !$scope.reload;
+        $scope.incidence = true;
+        $scope.showresult = true;
+    } else {
+        $scope.incidence = false;
+        $scope.showresult = false;
+        $scope.reload = true;
+        $scope.load = !$scope.reload;
+    }
 });

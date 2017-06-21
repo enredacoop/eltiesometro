@@ -11,35 +11,39 @@
           </div>
 
           <div class="main-block">
-              <h3 ng-show="share" class="text-center">Tu nivel de tiesura es del</h3>
-              <h3 ng-show="reload" class="text-center">Han compartido una tiesura del</h3>
-              <div class="row">
-                  <div class="col-sm-5 hidden-xs" style="text-align:right;">
-                      <img class="mascota" src="images/resultado-derecha.svg" />
+              <div ng-show="showresult">
+                  <h3 ng-show="load" class="text-center">Tu nivel de tiesura es del</h3>
+                  <h3 ng-show="reload" class="text-center">Han compartido una tiesura del</h3>
+                  <div ng-show="showresult" class="row">
+                      <div class="col-sm-5 hidden-xs" style="text-align:right;">
+                          <img class="mascota" src="images/resultado-derecha.svg" />
+                      </div>
+                      <div class="col-sm-2 col-xs-12">
+                          <h5 class="tiesura">{{tiesura}}%</h5>
+                          <h6 class="tiesura-desc">{{ tiesura_desc }}</h6>
+                      </div>
+                      <div class="col-sm-5 hidden-xs">
+                          <img class="mascota" src="images/resultado-izquierda.svg" />
+                      </div>
                   </div>
-                  <div class="col-sm-2 col-xs-12">
-                      <h5 class="tiesura">{{tiesura}}%</h5>
-                  </div>
-                  <div class="col-sm-5 hidden-xs">
-                      <img class="mascota" src="images/resultado-izquierda.svg" />
-                  </div>
-              </div>
-              
-              <div ng-show="share" id="share-buttons" class="text-center">
-                  <h5 class="text-center">Comparte tu tiesura con los demás</h5>
-                  <!-- Twitter -->
-                  <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-                      <img src="images/twitter.svg" alt="Comparte en Twitter" />
-                  </a>
-                  <!-- Facebook -->
-                  <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
-                      <img src="images/facebook.svg" alt="Comparte en Facebook" />
-                  </a>
               </div>
 
               <div ng-show="reload" class="text-center" style="padding:60px;">
                   <a class="main-button" ui-sref="form.percepcion">Comprueba tu tiesura</a>
               </div>
+              
+              <div id="share-buttons" class="text-center">
+                  <h5 class="text-center">Comparte esta iniciativa con tus amistades</h5>
+                  <!-- Twitter -->
+                  <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+                      <img src="images/twitter.svg" alt="Comparte en Twitter" />
+                  </a>
+                  <!-- Facebook: our ID is 1637175829647403 -->
+                  <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                      <img src="images/facebook.svg" alt="Comparte en Facebook" />
+                  </a>
+              </div>
+
               
 
               <img class="termometro img-responsive" src="images/termometro.svg" alt="Termómetro" />
@@ -66,7 +70,7 @@
                 <h5>Esta iniciativa pertenece al</h5>
                 <div class="row">
                     <div class="col-sm-4 text-center">
-                        <img src="images/oda.png" alt="Logo del Observatorio de la Desigualdad de Andalucía" />
+                        <img src="images/oda.png" width="300px" alt="Logo del Observatorio de la Desigualdad de Andalucía" />
                     </div>
                     <div class="col-sm-4 text-center">
                         <a href="http://observatoriodesigualdadandalucia.org/" class="oda-button">Visita la web</a>
@@ -101,7 +105,7 @@
     </div>
 </div>
 
-<div class="container-fluid" id="presiona-block">
+<div ng-show="incidence" class="container-fluid" id="presiona-block">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -111,31 +115,31 @@
                         <img src="images/susana-diaz.svg" alt="Foto de Susana Díaz" />
                         <h4>Susana Díaz</h4>
                         <h6>(Presidenta, PSOE)</h6>
-                        <a href="#" class="main-button main-button-small">Presiónala</a>
+                        <a href="https://twitter.com/share?text=.@susanadiaz sabemos que quieres oir la calle y buscar soluciones. Nosotrxs te ayudamos&url=http://eltiesometro.es&hashtags=tiesometro" class="main-button main-button-small" target="_blank">Presiónala</a>
                     </div>
                     <div class="col-sm-2 col-xs-6 text-center representante">
                         <img src="images/juan-marin.svg" alt="Foto de Juan Marín" />
                         <h4>Juan Marín</h4>
                         <h6>(Pacto Investidura, C's)</h6>
-                        <a href="#" class="main-button main-button-small">Presiónalo</a>
+                        <a href="https://twitter.com/share?text=.@juanmarin_cs seguro que te interesa esto ahora q vais a fijar objetivos xa el resto de legislatura&url=http://eltiesometro.es&hashtags=tiesometro" class="main-button main-button-small" target="_blank">Presiónalo</a>
                     </div>
                     <div class="col-sm-2 col-xs-6 text-center representante">
                         <img src="images/josemanual-moreno.svg" alt="Foto de José Manuel Moreno" />
                         <h4>J. Manuel Moreno</h4>
                         <h6>(Portavoz PP)</h6>
-                        <a href="#" class="main-button main-button-small">Presiónalo</a>
+                        <a href="https://twitter.com/share?text=.@JuanMa_Moreno además de creer en Andalucía seguro que puedes crear Andalucía en el Parlamento&url=http://eltiesometro.es&hashtags=tiesometro" class="main-button main-button-small" target="_blank">Presiónalo</a>
                     </div>
                     <div class="col-sm-2 col-xs-6 text-center representante">
                         <img src="images/teresa-rodriguez.svg" alt="Foto de Teresa Rodríguez" />
                         <h4>Teresa Rodríguez</h4>
                         <h6>(Portavoz Podemos)</h6>
-                        <a href="#" class="main-button main-button-small">Presiónala</a>
+                        <a href="https://twitter.com/share?text=.@TeresaRodr_ tenemos una lucha que llevar al Parlamento&url=http://eltiesometro.es&hashtags=tiesometro" class="main-button main-button-small" target="_blank">Presiónala</a>
                     </div>
                     <div class="col-sm-2 col-xs-6 text-center representante">
                         <img src="images/antonio-maillo.svg" alt="Foto de Antonio Maíllo" />
                         <h4>Antonio Maíllo</h4>
                         <h6>(Portavoz IU)</h6>
-                        <a href="#" class="main-button main-button-small">Presiónalo</a>
+                        <a href="https://twitter.com/share?text=.@MailloAntonio esto también es pedagogía para q en el Parlamento la ciudadanía sea prioritaria&url=http://eltiesometro.es&hashtags=tiesometro" class="main-button main-button-small" target="_blank">Presiónalo</a>
                     </div>
                 </div>
             </div>

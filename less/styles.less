@@ -43,7 +43,7 @@ pre {
     box-shadow: -10px 10px 0px 0px @grey;
     -moz-box-shadow: -10px 10px 0px 0px @grey;
     -webkit-box-shadow: -10px 10px 0px 0px @grey;
-    &:hover {
+    &:hover, &:active {
         color: @white;
         background-color: darken(@orange, 3%);
         text-decoration: none;
@@ -71,7 +71,7 @@ pre {
     box-shadow: -5px 5px 0px 0px darken(navy, 10%);
     -moz-box-shadow: -5px 5px 0px 0px darken(navy, 10%);
     -webkit-box-shadow: -5px 5px 0px 0px darken(navy, 10%);
-    &:hover {
+    &:hover, &:active {
         color: @white;
         background-color: darken(@navy, 10%);
         text-decoration: none;
@@ -204,6 +204,10 @@ input[type=radio] + label.block {
             text-align: center;
             padding-top: 30px;
         }
+        .tiesura-desc {
+            text-align: center;
+            font-weight: bold;
+        }
         .mascota {
             width: 200px;
         }
@@ -231,7 +235,7 @@ input[type=radio] + label.block {
 
 }
 #oda-block {
-    padding: 30px 30px 60px 30px;
+    padding: 30px 30px 30px 30px;
     background-color: @navy;
     .col-sm-4 {
         padding: 30px 10px;
