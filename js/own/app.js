@@ -107,12 +107,30 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
         var tiesura = (parseInt(d.ingresos) + parseInt(cdv) + parseInt(d.participacion))/3;
         // Transform tiesura from (1,5) to (0,4) to calculare percentage properly
         tiesura = Math.round(((tiesura-1)*100)/4);
+        // Google Analytics must be previously added
+        ga('send', 'event', {
+            eventCategory: 'Tiesura',
+            eventAction: 'finish',
+            eventLabel: 'Porcentaje de tiesura',
+            eventValue: tiesura+"%",
+            transport: 'beacon'
+        });
         $location.path(tiesura.toString().length+'Lt5'+tiesura+'MtR0');
     };
     
 })
 
 .controller('resultadoController', function($scope, $state, $stateParams, $location) {
+
+    $scope.register_event = function(type, label) {
+        // Google Analytics must be previously added
+        ga('send', 'event', {
+            eventCategory: type,
+            eventAction: 'click',
+            eventLabel: label,
+            transport: 'beacon'
+        });
+    }
 
     $scope.get_desc_from_tiesura = function(t) {
         t = parseInt(t);
@@ -146,3 +164,5 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
         $scope.load = !$scope.reload;
     }
 });
+
+
