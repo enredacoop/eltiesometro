@@ -2,6 +2,10 @@
     <div class="row">
         <div class="col-sm-12">
 
+          <div ng-hide="load">
+              <div class="alert alert-info text-center" role="alert" ng-show="cookieflag"><button type="button" class="close" ng-click="hideCookie()" aria-label="Close"><span aria-hidden="true"><strong>&times;</strong></span></button>Al navegar muestras tu conformidad con que usemos algunas galletas (cookies) para alimentar esta webapp</div>
+          </div>
+          
           <div class="page-head text-center">
               <a ui-sref="form.inicio">
                   <h1 class="hidden">ELTSMT</h1>
@@ -76,7 +80,7 @@
                         <a href="http://observatoriodesigualdadandalucia.org/" class="oda-button" target="_blank" ng-click="register_event('ODA', 'WEB')">Visita la web</a>
                     </div>
                     <div class="col-sm-4 text-center">
-                        <a href="http://www.observatoriodesigualdadandalucia.org/sites/default/files/i_informe_oda_0.pdf" class="oda-button" target="_blank" ng-click="register_event('ODA', 'PDF')">Descarga el informe</a>
+                        <a href="informe-resumen.pdf" class="oda-button" target="_blank" ng-click="register_event('ODA', 'PDF')">Descarga el informe</a>
                     </div>
                 </div>    
             </div>

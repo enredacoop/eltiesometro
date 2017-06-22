@@ -74,6 +74,11 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
 // our controller for the form
 // =============================================================================
 .controller('formController', function($scope, $state, $location, $timeout) {
+
+    $scope.cookieflag = true;
+    $scope.hideCookie = function() {
+        $scope.cookieflag = false;
+    }
     
     // we will store all of our form data in this object
     $scope.formData = {};
@@ -122,6 +127,11 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
 })
 
 .controller('resultadoController', function($scope, $state, $stateParams, $location) {
+
+    $scope.cookieflag = true;
+    $scope.hideCookie = function() {
+        $scope.cookieflag = false;
+    }
 
     $scope.register_event = function(type, label) {
         // Google Analytics must be previously added
