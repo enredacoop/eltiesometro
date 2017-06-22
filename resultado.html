@@ -8,26 +8,21 @@
           
           <div class="page-head text-center">
               <a ui-sref="form.inicio">
-                  <h1 class="hidden">ELTSMT</h1>
-                  <h2 class="hidden"></h2>
+                  <h1 class="hidden">ElTiesometro.es | Comprueba tu nivel de tiesura</h1>
+                  <h2 class="hidden">Comprueba si estás más tieso que la rodilla de un playmobil</h2>
                   <img class="img-responsive" src="images/logo.svg" />
               </a>
           </div>
 
           <div class="main-block">
               <div ng-show="showresult">
-                  <h3 ng-show="load" class="text-center">Tu nivel de tiesura es del</h3>
-                  <h3 ng-show="reload" class="text-center">Han compartido una tiesura del</h3>
+                  <h5 ng-show="load" class="text-center">Tu tiesura se define por</h5>
+                  <h5 ng-show="reload" class="text-center">Han compartido contigo</h5>
                   <div ng-show="showresult" class="row">
-                      <div class="col-sm-5 hidden-xs" style="text-align:right;">
-                          <img class="mascota" src="images/resultado-derecha.svg" />
-                      </div>
-                      <div class="col-sm-2 col-xs-12">
-                          <h5 class="tiesura">{{tiesura}}%</h5>
-                          <h6 class="tiesura-desc">{{ tiesura_obj.description }}</h6>
-                      </div>
-                      <div class="col-sm-5 hidden-xs">
-                          <img class="mascota" src="images/resultado-izquierda.svg" />
+                      <div class="col-sm-12" id="tiesura">
+                          <img src="{{ tiesura_obj.image }}" alt="Imagen de {{ tiesura_obj.description }}">
+                          <h3>{{ tiesura_obj.description }}</h3>
+                          
                       </div>
                   </div>
               </div>
