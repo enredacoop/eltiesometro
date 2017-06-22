@@ -175,7 +175,7 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
         $scope.incidence = true;
         $scope.showresult = true;
     } else {
-        $scope.incidence = false;
+        $scope.incidence = true;
         $scope.showresult = false;
         $scope.reload = true;
         $scope.load = !$scope.reload;
