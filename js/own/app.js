@@ -113,7 +113,6 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
         // Transform tiesura from (1,5) to (0,4) to calculare percentage properly
         tiesura = Math.round(((tiesura-1)*100)/4);
         // Google Analytics must be previously added
-        console.log(ga);
         ga('send', 'event', {
             eventCategory: 'Tiesura',
             eventAction: 'finish',
@@ -143,18 +142,26 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
         });
     }
 
-    $scope.get_desc_from_tiesura = function(t) {
+    $scope.get_tiesura = function(t) {
         t = parseInt(t);
-        if (t in _.range(0,20))
-            return "Estoy en el taco";
-        else if (t in _.range(20,40))
-            return "No me puedo quejar";
-        else if (t in _.range(40,60))
-            return "Tiesura media";
-        else if (t in _.range(60,80))
-            return "La tiesura me aprieta demasiao";
-        else 
-            return "No puedo con más tiesura";
+        if (t>=0 && t<5) {
+            description = "Estoy en el taco";
+            image = "images/final1.svg";
+        } else if (t>=5 && t<25) {
+            description = "No me va malamente";
+            image = "images/final2.svg";
+        } else if (t>=25 && t<50) {
+            description = "Tiesura media";
+            image = "images/final3.svg";
+        } else if (t>=50 && t<75) {
+            description = "La tiesura aprieta demasiao";
+            image = "images/final4.svg";
+        } else  {
+            description = "No puedo con más tiesura";
+            image = "images/final5.svg";
+        }
+        return {'description': description, 'image': image};
+
     }
 
     // Get the ranking value from hash (just the first two digits)
@@ -162,7 +169,7 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
     $scope.reloadurl = $location.$$protocol+'://'+$location.$$host+'/%23'+$location.$$url+'r';
     if (hash != 'actua') {
         $scope.tiesura = hash.substr(4, hash.charAt(0));
-        $scope.tiesura_desc = $scope.get_desc_from_tiesura($scope.tiesura);
+        $scope.tiesura_obj = $scope.get_tiesura($scope.tiesura);
         $scope.reload = $stateParams.hash.charAt($stateParams.hash.length-1) == 'r';
         $scope.load = !$scope.reload;
         $scope.incidence = true;
