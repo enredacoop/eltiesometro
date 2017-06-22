@@ -159,9 +159,7 @@ angular.module('tiesometer', ['ngAnimate', 'ui.router'])
 
     // Get the ranking value from hash (just the first two digits)
     var hash = $stateParams.hash;
-    if ($location.$$port) port = ':'+$location.$$port;
-    else port = '';
-    $scope.reloadurl = $location.$$protocol+'://'+$location.$$host+port+'/%23'+$location.$$url+'r';
+    $scope.reloadurl = $location.$$protocol+'://'+$location.$$host+'/%23'+$location.$$url+'r';
     if (hash != 'actua') {
         $scope.tiesura = hash.substr(4, hash.charAt(0));
         $scope.tiesura_desc = $scope.get_desc_from_tiesura($scope.tiesura);
