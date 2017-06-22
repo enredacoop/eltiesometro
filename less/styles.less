@@ -207,7 +207,7 @@ input[type=radio] + label.block {
             text-align: center;
             h3 {
                 color: @navy;
-                font-size: 2em;
+                font-size: 2.5em;
                 font-weight: bold;
                 text-align: center;
             }
@@ -341,7 +341,18 @@ input[type=radio] + label.block {
     .ask-button {
         padding-top: 50px;
     }
+    #oda-block {
+        .button-block {
+            padding: 40px 10px;
+        }
+    }
     .main-button {
         font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .main-button {
+        font-size: 1em;
     }
 }
